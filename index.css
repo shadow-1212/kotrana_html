@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Rubik Scribble";
+    src: url('fonts/RubikScribble-Regular.ttf');
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rakoto', Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    display: grid;
+      grid-template-rows: auto 1fr; /* Navbar takes auto height, the rest is the main content area */
+      grid-template-columns: 1fr; /* Single column layout for simplicity */
+      grid-template-areas:
+        "navbar"
+        "content";
+      min-height: 100vh;
+}
+.navbar{
+    display: flex;
+    z-index: 1;
+    justify-content: space-between;
+    padding: 10px;
+    height: 2rem;
+    grid-area: navbar;
+    position: sticky;
+    top: 0;
+    color: white;
+
+    .left-container{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+    
+        .navbar-item{
+            font-size: 20px;
+            font-family: 'Rakoto';
+
+        } 
+    }
+
+    .right-container{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .login{
+            background-color: transparent;
+            color: white;
+            border-radius: 20px;
+            padding: 5px 20px 5px 20px;
+            border: 1px solid white;
+            cursor: pointer;
+            &:hover{
+                background-color: rebeccapurple;
+            }
+        }
+    }
+}
+
+
+.test{
+    font-family: 'Rubik Scribble', sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    font-weight: normal;
+}
+.content{
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    .background-container{
+        height: calc(100vh - 2rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .text{
+            z-index: 10;
+            color: white;
+            font-weight: bolder;
+            font-size: 40px;
+            font-family: "Rubik Scribble";
+            letter-spacing: 5px;
+        }
+    }
+    .background{
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        img{
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+
